@@ -5,9 +5,7 @@ import {
   Text,
   View,
   TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  Pressable,
+  TextInput,
 } from "react-native";
 import { theme } from "./colors";
 
@@ -15,6 +13,8 @@ export default function App() {
   const [working, setWorking] = useState(true);
   const travel = () => setWorking(false);
   const work = () => setWorking(true);
+  const onChangeText = (payload) => setText(payload);
+  const [text, setText] = useState("");
 
   return (
     <View style={styles.container}>
@@ -38,6 +38,13 @@ export default function App() {
           </Text>
         </TouchableOpacity>
       </View>
+
+      <TextInput
+        onChangeText={onChangeText}
+        value={text}
+        placeholder={working ? "Add a To Do" : "Where do you want to go?"}
+        style={styles.input}
+      />
     </View>
   );
 }
@@ -56,5 +63,13 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 38,
     fontWeight: "600",
+  },
+  input: {
+    backgroundColor: "white",
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    borderRadius: 30,
+    marginTop: 20,
+    fontSize: 18,
   },
 });
