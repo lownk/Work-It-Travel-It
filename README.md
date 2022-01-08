@@ -12,7 +12,6 @@
 라이브러리/프레임워크 : <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/></a> <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=Redux&logoColor=white"/></a> <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=flat-square&logo=Bootstrap&logoColor=white"/></a> <img src="https://img.shields.io/badge/ReactRouter-CA4245?style=flat-square&logo=ReactRouter&logoColor=white"/></a> <img src="https://img.shields.io/badge/Axios-4ca9a3?style=flat-square&logo=Axios&logoColor=white"/></a> <img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/></a>
 
 툴 : <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a> <img src="https://img.shields.io/badge/Trello-0052CC?style=flat-square&logo=Trello&logoColor=white"/></a> <br><br>
-<img width="1440" alt="스크린샷 2021-11-10 오후 5 14 23" src="https://user-images.githubusercontent.com/85019895/142412891-512fcc04-c208-489c-a9be-bc4bd6068ba9.png">
 
 <br><br><br>
 
