@@ -12,7 +12,7 @@ import { theme } from "./colors";
 export default function App() {
   const [working, setWorking] = useState(true);
   const [text, setText] = useState("");
-  const [toDos, settoDos] = useState([]);
+  const [toDos, settoDos] = useState({});
   const travel = () => setWorking(false);
   const work = () => setWorking(true);
   const onChangeText = (payload) => setText(payload);
@@ -21,8 +21,13 @@ export default function App() {
     if (text === "") {
       return;
     }
+    const newToDos = Object.assign({}, toDos, {
+      [Date.now()]: { text, work: working },
+    });
+    settoDos(newToDos);
     setText("");
   };
+  console.log(toDos);
 
   return (
     <View style={styles.container}>
