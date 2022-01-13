@@ -7,9 +7,11 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  Alert,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { theme } from "./colors";
+import { Fontisto } from "@expo/vector-icons";
 
 const STORAGE_KEY = "@toDos";
 
@@ -50,11 +52,26 @@ export default function App() {
       ...toDos,
       [Date.now()]: { text, working },
     };
-    settoDos(newToDos);
+    setToDos(newToDos);
     await saveToDos(newToDos);
     setText("");
   };
-  console.log(toDos);
+
+  const deleteToDo = async (key) => {
+    Alert.alert("Delete", "정말로 삭제하시겠습니까?", [
+      { text: "돌아가기" },
+      {
+        text: "삭제",
+        onPress: async () => {
+          const newToDos = { ...toDos };
+          delete newToDos[key];
+          setToDos(newToDos);
+          await saveToDos(newToDos);
+        },
+      },
+    ]);
+    return;
+  };
 
   return (
     <View style={styles.container}>
@@ -92,6 +109,15 @@ export default function App() {
           toDos[key].working === working ? (
             <View style={styles.toDo} key={key}>
               <Text style={styles.toDoText}>{toDos[key].text}</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  deleteToDo(key);
+                }}
+              >
+                <Text>
+                  <Fontisto name="trash" size={18} color="silver" />
+                </Text>
+              </TouchableOpacity>
             </View>
           ) : null
         )}
@@ -129,6 +155,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 20,
     borderRadius: 15,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   toDoText: {
     color: "white",
