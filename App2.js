@@ -16,18 +16,18 @@ import { FontAwesome } from "@expo/vector-icons";
 const STORAGE_KEY = "@toDos";
 
 export default function App() {
-  const [working, setWorking] = useState(true);
+  const [working, setWorking] = useState();
   const [text, setText] = useState("");
   const [toDos, setToDos] = useState({});
 
-  const work = async () => {
+  const work = () => {
     setWorking(true);
-    await AsyncStorage.setItem("working", JSON.stringify(true));
+    // console.log(working);
   };
 
-  const travel = async () => {
+  const travel = () => {
     setWorking(false);
-    await AsyncStorage.setItem("working", JSON.stringify(false));
+    // console.log(working);
   };
 
   const onChangeText = (payload) => setText(payload);
@@ -45,12 +45,16 @@ export default function App() {
       const s = await AsyncStorage.getItem(STORAGE_KEY);
       console.log(s);
       if (s !== null) {
+        console.log("dㅕ기");
         setToDos(JSON.parse(s));
       }
+      // const a = await AsyncStorage.getItem("1");
+      // setWorking(JSON.parse(a));
     } catch (error) {
       console.log("error");
     }
   };
+  console.log(toDos);
 
   useEffect(() => {
     loadToDos();
@@ -58,18 +62,33 @@ export default function App() {
 
   useEffect(async () => {
     try {
+      console.log(working, "워킹 셋중");
+      await AsyncStorage.setItem("working", JSON.stringify(working));
       const f = await AsyncStorage.getItem("working");
+      console.log(f, "확인");
+    } catch (error) {
+      console.log("error");
+    }
+  }, [working]);
+
+  useEffect(async () => {
+    try {
+      const f = await AsyncStorage.getItem("working");
+      console.log("새로렌더", f);
       if (f !== null) {
-        if (f === "true") {
+        if ((f = "true")) {
+          console.log("1번");
           setWorking(true);
         } else {
+          console.log("2번");
           setWorking(false);
         }
       } else {
+        console.log("3번");
         setWorking(true);
       }
     } catch (error) {
-      console.log("error f");
+      console.log("error");
     }
   }, []);
 
@@ -101,6 +120,11 @@ export default function App() {
     ]);
     return;
   };
+
+  console.log(working);
+  Object.keys(toDos).map((key) => {
+    console.log(typeof toDos[key].working);
+  });
 
   return (
     <View style={styles.container}>
