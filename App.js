@@ -19,6 +19,7 @@ export default function App() {
   const [working, setWorking] = useState(true);
   const [text, setText] = useState("");
   const [toDos, setToDos] = useState({});
+  const [done, setDone] = useState(false);
 
   const work = async () => {
     setWorking(true);
@@ -43,7 +44,7 @@ export default function App() {
   const loadToDos = async () => {
     try {
       const s = await AsyncStorage.getItem(STORAGE_KEY);
-      console.log(s);
+      // console.log(s);
       if (s !== null) {
         setToDos(JSON.parse(s));
       }
@@ -79,8 +80,10 @@ export default function App() {
     }
     const newToDos = {
       ...toDos,
-      [Date.now()]: { text, working },
+      [Date.now()]: { text, working, done },
     };
+    // console.log(newToDos);
+
     setToDos(newToDos);
     await saveToDos(newToDos);
     setText("");
@@ -101,6 +104,20 @@ export default function App() {
     ]);
     return;
   };
+
+  const doneToDo = async (key) => {
+    const newToDos = { ...toDos };
+    setDone(!done);
+    newToDos[key].done = !done;
+    setToDos(newToDos);
+    await saveToDos(newToDos);
+
+    // console.log(newToDos[key], "ㅎㅎㅎㅎ");
+  };
+
+  // useEffect(() => {
+  //   console.log(toDos);
+  // }, [toDos]);
 
   return (
     <View style={styles.container}>
@@ -132,9 +149,21 @@ export default function App() {
         {Object.keys(toDos).map((key) =>
           toDos[key].working === working ? (
             <View style={styles.toDo} key={key}>
-              <Text style={styles.toDoText}>
-                <FontAwesome name="circle-o" size={15} color="#a9aecb" />{" "}
-                {/* <FontAwesome name="check-circle-o" size={16} color="#a9aecb" /> */}
+              <Text
+                style={
+                  toDos[key].done == false
+                    ? styles.toDoText
+                    : styles.toDoTextLine
+                }
+              >
+                <FontAwesome
+                  name="trash"
+                  size={17}
+                  color="#a9aecb"
+                  onPress={() => {
+                    doneToDo(key);
+                  }}
+                />{" "}
                 {toDos[key].text}
               </Text>
               <TouchableOpacity
@@ -143,7 +172,7 @@ export default function App() {
                 }}
               >
                 <Text>
-                  <Fontisto name="trash" size={16} color="#a9aecb" />
+                  <Fontisto name="trash" size={17} color="#a9aecb" />
                 </Text>
               </TouchableOpacity>
             </View>
@@ -218,6 +247,12 @@ const styles = StyleSheet.create({
   },
   toDoText: {
     color: "#a9aecb",
+    fontSize: 16,
+    fontWeight: "500",
+  },
+  toDoTextLine: {
+    color: "#a9aecb",
+    textDecorationLine: "line-through",
     fontSize: 16,
     fontWeight: "500",
   },
