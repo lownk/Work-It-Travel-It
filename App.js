@@ -8,6 +8,7 @@ import {
   TextInput,
   ScrollView,
   Alert,
+  TouchableWithoutFeedback,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { theme } from "./colors";
@@ -34,6 +35,7 @@ export default function App() {
   };
 
   const onChangeText = (payload) => setText(payload);
+  const NewOnChangeText = (payload) => setNewText(payload);
 
   const saveToDos = async (toSave) => {
     try {
@@ -119,8 +121,32 @@ export default function App() {
     newToDos[key].editing = true;
     setToDos(newToDos);
     await saveToDos(newToDos);
+  };
 
-    console.log(toDos);
+  const cancelEditing = async (key) => {
+    const newToDos = { ...toDos };
+    newToDos[key].editing = false;
+    await setToDos(newToDos);
+    // console.log(newToDos);
+  };
+
+  const addEditedTodo = async (key) => {
+    const newToDos = { ...toDos };
+    if (newText == "") {
+      newToDos[key].editing = false;
+    }
+
+    newToDos[key].text = newText;
+    setToDos(newToDos);
+    // console.log(newToDos[key].text);
+    await saveToDos(newToDos);
+
+    //   setToDos(newToDos);
+    // await saveToDos(newToDos);
+    // setText("");
+
+    // setToDos(newToDos);
+    // console.log("황댕댕멍청");
   };
 
   // useEffect(() => {
@@ -168,10 +194,16 @@ export default function App() {
                 />{" "}
                 {toDos[key].editing === true ? (
                   <View>
-                    <Text>김롱롱 사랑해</Text>
                     <TextInput
-                      placeholder={"Task를 수정해주세요."}
-                      style={{}}
+                      placeholder={"수정해주세요."}
+                      onBlur={() => {
+                        cancelEditing(key);
+                      }}
+                      value={newText}
+                      onChangeText={NewOnChangeText}
+                      onSubmitEditing={() => {
+                        addEditedTodo(key);
+                      }}
                     />
                   </View>
                 ) : (
