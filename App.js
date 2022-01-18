@@ -20,6 +20,8 @@ export default function App() {
   const [text, setText] = useState("");
   const [toDos, setToDos] = useState({});
   const [done, setDone] = useState(false);
+  const [newText, setNewText] = useState("");
+  const [editing, setEditing] = useState(false);
 
   const work = async () => {
     setWorking(true);
@@ -80,7 +82,7 @@ export default function App() {
     }
     const newToDos = {
       ...toDos,
-      [Date.now()]: { text, working, done },
+      [Date.now()]: { text, working, done, editing },
     };
     // console.log(newToDos);
 
@@ -107,12 +109,18 @@ export default function App() {
 
   const doneToDo = async (key) => {
     const newToDos = { ...toDos };
-    setDone(!done);
-    newToDos[key].done = !done;
+    newToDos[key].done = !newToDos[key].done;
+    setToDos(newToDos);
+    await saveToDos(newToDos);
+  };
+
+  const editToDo = async (key) => {
+    const newToDos = { ...toDos };
+    newToDos[key].editing = true;
     setToDos(newToDos);
     await saveToDos(newToDos);
 
-    // console.log(newToDos[key], "ㅎㅎㅎㅎ");
+    console.log(toDos);
   };
 
   // useEffect(() => {
@@ -149,13 +157,7 @@ export default function App() {
         {Object.keys(toDos).map((key) =>
           toDos[key].working === working ? (
             <View style={styles.toDo} key={key}>
-              <Text
-                style={
-                  toDos[key].done == false
-                    ? styles.toDoText
-                    : styles.toDoTextLine
-                }
-              >
+              <Text>
                 <FontAwesome
                   name="trash"
                   size={17}
@@ -164,7 +166,28 @@ export default function App() {
                     doneToDo(key);
                   }}
                 />{" "}
-                {toDos[key].text}
+                {toDos[key].editing === true ? (
+                  <View>
+                    <Text>김롱롱 사랑해</Text>
+                    <TextInput
+                      placeholder={"Task를 수정해주세요."}
+                      style={{}}
+                    />
+                  </View>
+                ) : (
+                  <Text
+                    onPress={() => {
+                      editToDo(key);
+                    }}
+                    style={
+                      toDos[key].done === false
+                        ? styles.toDoText
+                        : styles.toDoTextLine
+                    }
+                  >
+                    {toDos[key].text}
+                  </Text>
+                )}
               </Text>
               <TouchableOpacity
                 onPress={() => {
