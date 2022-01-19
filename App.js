@@ -126,32 +126,28 @@ export default function App() {
   const cancelEditing = async (key) => {
     const newToDos = { ...toDos };
     newToDos[key].editing = false;
-    await setToDos(newToDos);
+    setToDos(newToDos);
+    await saveToDos(newToDos);
+
     // console.log(newToDos);
   };
 
   const addEditedTodo = async (key) => {
     const newToDos = { ...toDos };
+
     if (newText == "") {
       newToDos[key].editing = false;
+    } else {
+      newToDos[key].text = newText;
+      setToDos(newToDos);
+      // console.log(newToDos[key].text);
+      await saveToDos(newToDos);
     }
-
-    newToDos[key].text = newText;
-    setToDos(newToDos);
-    // console.log(newToDos[key].text);
-    await saveToDos(newToDos);
-
-    //   setToDos(newToDos);
-    // await saveToDos(newToDos);
-    // setText("");
-
-    // setToDos(newToDos);
-    // console.log("황댕댕멍청");
   };
 
-  // useEffect(() => {
-  //   console.log(toDos);
-  // }, [toDos]);
+  useEffect(() => {
+    console.log(toDos);
+  }, [toDos]);
 
   return (
     <View style={styles.container}>
@@ -204,6 +200,7 @@ export default function App() {
                       onSubmitEditing={() => {
                         addEditedTodo(key);
                       }}
+                      selectTextOnFocus={true}
                     />
                   </View>
                 ) : (
