@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { theme } from "./colors";
 import { Fontisto } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 const STORAGE_KEY = "@toDos";
 
 export default function App() {
@@ -142,6 +143,7 @@ export default function App() {
       setToDos(newToDos);
       // console.log(newToDos[key].text);
       await saveToDos(newToDos);
+      setNewText("");
     }
   };
 
@@ -180,18 +182,29 @@ export default function App() {
           toDos[key].working === working ? (
             <View style={styles.toDo} key={key}>
               <Text>
-                <FontAwesome
-                  name="trash"
-                  size={17}
-                  color="#a9aecb"
-                  onPress={() => {
-                    doneToDo(key);
-                  }}
-                />{" "}
+                {toDos[key].done === false ? (
+                  <Ionicons
+                    name="md-checkbox-outline"
+                    size={24}
+                    color="#a9aecb"
+                    onPress={() => {
+                      doneToDo(key);
+                    }}
+                  />
+                ) : (
+                  <Ionicons
+                    name="md-checkbox"
+                    size={24}
+                    color="#a9aecb"
+                    onPress={() => {
+                      doneToDo(key);
+                    }}
+                  />
+                )}{" "}
                 {toDos[key].editing === true ? (
                   <View>
                     <TextInput
-                      placeholder={"수정해주세요."}
+                      placeholder={toDos[key].text}
                       onBlur={() => {
                         cancelEditing(key);
                       }}
@@ -200,7 +213,6 @@ export default function App() {
                       onSubmitEditing={() => {
                         addEditedTodo(key);
                       }}
-                      selectTextOnFocus={true}
                     />
                   </View>
                 ) : (
@@ -250,6 +262,10 @@ export default function App() {
           left: 0,
           right: 0,
           bottom: 0,
+          shadowColor: "#000000",
+          shadowOpacity: 0.3,
+          shadowOffset: { width: 2, height: 2 },
+          elevation: 4,
         }}
       />
     </View>
@@ -263,6 +279,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
   },
   header: {
+    elevation: 4,
     flexDirection: "row",
     marginTop: 100,
     marginBottom: 20,
@@ -288,6 +305,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   toDo: {
+    elevation: 2,
     backgroundColor: "white",
     marginBottom: 10,
     paddingVertical: 15,
