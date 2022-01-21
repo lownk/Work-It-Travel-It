@@ -142,21 +142,16 @@ export default function App() {
     } else {
       newToDos[key].text = newText;
       setToDos(newToDos);
-      // console.log(newToDos[key].text);
       await saveToDos(newToDos);
       setNewText("");
     }
   };
 
-  // useEffect(() => {
-  //   console.log(toDos);
-  // }, [toDos]);
-
   const inputRef = useRef(null);
-  const onFocusHandler = () => {};
+  //useRef 초기값을 null로 주고
   useEffect(() => {
-    console.log();
     inputRef.current && inputRef.current.focus();
+    // inputRef.current(TextInput)가 존재하면 그곳에 포커스맞추기
   }, [toDos]);
 
   return (
@@ -213,16 +208,6 @@ export default function App() {
                   <View>
                     <TextInput
                       ref={inputRef}
-                      //  우리가 이제 하려는건
-                      //  투두 클릭했을때 인풋에 포커스가 생기는거
-                      //  그럼 어ㅓ쨌든 투두의 에디팅을 너가 바꿔줬잖아 그럼
-                      //  인풋에 포커스가 올라오는건 투두가 바뀔떄마다 실행이된까
-                      //  유즈이펙트에 [투두스] 이걸로 유즈이펙트를 실행하는거지 해바 여기까지만 어디?
-
-                      //  유즈이펙트가 특정 스테이트가 변할때 뭔가를 할수 있다고 했잖앙? 용도는 여러가지고 그중하나가 특정스테이트 변하는걸 관찰하고 변하면 유즈이펙트 안에 있는것을 실행한다 그러니까 투두스를 클릭했을때 어떤 스테이트가 변하고 그 변하는 스테이트를 관찰하는 유즈이펙트를 만든다
-
-                      //  너가 어떻게 하고싶은지? 투두가 바뀔때잖아?
-                      //  그렇지 않아?난 영어 안쓰니까 너가 정해놓은 스테이트 명칭
                       placeholder={toDos[key].text}
                       onBlur={() => {
                         cancelEditing(key);
