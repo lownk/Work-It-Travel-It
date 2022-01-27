@@ -9,15 +9,15 @@ Work탭과 Travel탭으로 구분되며 각각 해야할 일, 가야 할 장소�
 할 일을 터치해 내용을 수정하거나 버튼으로 목록에서 제거할 수 있습니다.
 
 
-<br><br><br>
+<br><br>
 
 ## 개발 환경
 ---
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/></a><br>
-<img src="https://img.shields.io/badge/ReactNative-61DAFB?style=flat-square&logo=React&logoColor=white"/></a><img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/></a><br>
+<img src="https://img.shields.io/badge/ReactNative-61DAFB?style=flat-square&logo=React&logoColor=white"/></a> <img src="https://img.shields.io/badge/StyleSheet-CC6699?style=flat-square&logo=&logoColor=white"/></a><br>
 <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a><br><br>
 
-<br><br><br>
+<br><br>
 
 
 ## 구현 사항
