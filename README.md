@@ -1,5 +1,5 @@
-<h1>Work it Travel it</h1>
-<br><br><br>
+# Work it Travel it
+<br>
 
 ## 프로젝트 개요
 ---
@@ -13,7 +13,7 @@ Work탭과 Travel탭으로 구분되며 각각 해야할 일, 가야 할 장소�
 
 ## 개발 환경
 ---
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/></a><br>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/ReactNative-61DAFB?style=flat-square&logo=React&logoColor=white"/></a> <img src="https://img.shields.io/badge/StyleSheet-CC6699?style=flat-square&logo=React&logoColor=white"/></a><br>
 <img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a><br><br>
 
@@ -22,10 +22,9 @@ Work탭과 Travel탭으로 구분되며 각각 해야할 일, 가야 할 장소�
 
 ## 구현 사항
 ---
-
-Work / Travel 탭 분리
-Work탭과 Travel탭을 분리해 총 두 공간에 to do를 저장할 수 있습니다. <br>
-Work탭이 활성화 되어있는지의 여부를 boolean값으로 work state에 저장해 탭에 onPress이벤트 감지시 각각 다른 화면을 보여줍니다. 
+## Work / Travel 탭
+- Work탭과 Travel탭을 분리해 각각 다른 공간에 to do를 저장할 수 있습니다. <br>
+Work탭이 활성화 되어있는지의 여부를 boolean값으로 work state에 저장해 탭에 onPress이벤트 감지시 각각 다른 화면을 보여줍니다. <br>
 AsyncStorage에 사용해 Work
 
 
