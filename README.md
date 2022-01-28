@@ -23,9 +23,10 @@ Work탭과 Travel탭으로 구분되며 각각 해야할 일, 가야 할 장소�
 ## 구현 사항
 ---
 ## Work / Travel 탭
-- Work탭과 Travel탭을 분리해 각각 다른 공간에 to do를 저장할 수 있습니다. <br>
-Work탭이 활성화 되어있는지의 여부를 boolean값으로 work state에 저장해 탭에 onPress이벤트 감지시 각각 다른 화면을 보여줍니다. <br>
-AsyncStorage에 사용해 Work
+- 각 탭을 분리해 각각 다른 공간에 to do를 저장할 수 있습니다. <br>
+Work탭이 활성화 되어있는지의 여부를 boolean값으로 working state에 저장해 탭에 onPress이벤트 감지시 각각 다른 화면을 보여줍니다. <br>
+
+- 앱을 재시작했을때 탭의 위치를 기억합니다.<br> AsyncStorage에 
 
 
 <br><br><br>
