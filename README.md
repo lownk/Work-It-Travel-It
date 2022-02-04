@@ -15,8 +15,12 @@
 ## 개발 환경
 ---
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=Javascript&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/ReactNative-61DAFB?style=flat-square&logo=React&logoColor=white"/></a> <img src="https://img.shields.io/badge/StyleSheet-CC6699?style=flat-square&logo=React&logoColor=white"/></a><br>
-<img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a> <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a><br><br>
+<img src="https://img.shields.io/badge/ReactNative-61DAFB?style=flat-square&logo=React&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/StyleSheet-CC6699?style=flat-square&logo=React&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Expo-000020?style=flat-square&logo=Expo&logoColor=white"/></a><br>
+<img src="https://img.shields.io/badge/Github-181717?style=flat-square&logo=Github&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=Git&logoColor=white"/></a><br><br>
+
 
 <br><br>
 
@@ -30,10 +34,4 @@ Work탭이 활성화 되어있는지의 여부를 boolean값으로 working state
 - 앱을 재시작했을때 탭의 위치를 기억합니다.<br> AsyncStorage에 
 
 
-<br><br><br>
-
-## 기능별 시연 영상
----
-
-
-
+<br><br>
