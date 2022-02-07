@@ -28,18 +28,22 @@
 ## 구현 사항
 ---
 ## Work / Travel 탭
-- 각 탭을 분리해 각각 다른 공간에 할 일을 저장할 수 있습니다. <br>
+- 탭을 분리해 두 가지 공간에 각각 할 일을 저장할 수 있습니다. <br>
 Work탭이 활성화 되어있는지의 여부를 boolean타입으로 working state에 저장해, 각각의 탭에서 onPress이벤트가 감지 될 경우 boolean타입에 따라 각각 다른 화면을 보여줍니다. <br>
 
 - 앱을 재시작했을때 탭의 위치를 기억합니다.<br>
-각 탭을 터치할때마다 해당 탭의 working state를 AsyncStorage에 저장한 뒤, 앱이 재시작 될 때 해당 값을 불러와 현재의 working state로 할당합니다. 
+탭을 터치할때마다 해당 탭의 working state를 AsyncStorage에 저장한 뒤, 앱이 재시작 될 때 해당 값을 불러와 현재의 working state로 할당합니다. 
 
 ## to do list
+- 할 일 저장<br>
+TextInput창에 텍스트를 입력한 후 키보드상의 완료 버튼을 누르면 onSubmitEditing prop에 의해 텍스트를 저장하는 함수가 호출됩니다. 함수에서는 data.now()메소드를 실행시킨 결과 값을 고유 key값으로 사용했습니다. value에는 text, working, done, editing key들을 넣고 state로 활용합니다.
 
-- 할 일 완료 표시
-to do
+- 할 일 완료 표시<br>
+done state를 만들어 boolean값을 참조하도록 하고, 각to do의 value에 넣습니다. done이 true일 때 해당 일의 스타일에 접근해 아이콘을 변경하고 텍스트에 데코레이션을 추가합니다.
 
 - 목록에서 할 일 제거
+자바스크립트 delete메소드로 특정 
+
 
 - 할 일 수정 
 
