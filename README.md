@@ -1,5 +1,5 @@
 <br>
-# 💰Work it Travel it
+# Work it Travel it
 <br>
 
 ## 프로젝트 개요
