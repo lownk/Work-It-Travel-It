@@ -1,5 +1,5 @@
 
-# 💰Work it Travel it
+# Work it Travel it
 <br>
 
 ## 프로젝트 개요
@@ -39,13 +39,13 @@ Work탭이 활성화 되어있는지의 여부를 boolean타입으로 working st
 TextInput창에 텍스트를 입력한 후 키보드상의 완료 버튼을 누르면 onSubmitEditing prop에 의해 to do를 저장하는 함수가 호출됩니다. state로 만들어둔 빈 객체에 차곡차곡 do to들을 넣어줍니다. onChange로 받아진 텍스트를 text state에 저장합니다.  data.now()메소드의 결과 값을 각 to do의 고유 key값으로 사용했습니다. value에는 text, working, done, editing key들을 넣습니다. 이렇게 to do의 정보를 담은 객체를 toDos state로 업데이트합니다.
 
 - 할 일 완료 표시<br>
-done state를 만들어 boolean값을 할당하고, 각to do의 value에 넣습니다. done이 true일 때 해당 to do의 스타일에 접근해 아이콘을 변경하고 textDecoraition도 추가합니다.
+done state를 만들어 boolean값을 할당하고, 각to do의 value에 넣습니다. 체크박스 아이콘을 누르면 토글인 done state값이 스위치되고, true일 때만 해당 to do의 스타일에 접근해 아이콘을 변경하고 textDecoraition도 추가합니다.
 
 - 목록에서 할 일 제거<br>
 아이콘을 누르면 to do를 제거하는 함수가 호출됩니다. 자바스크립트 delete메소드로 key를 지칭해 해당 to do를 삭제합니다.
 
 - 할 일 수정<br>
-to do 텍스트부분을 터치하면 각 to do 속의 editing state를 true로 업데이트하고, editing이 true일 때만 TextInput을 표시합니다. input에 적힌 텍스트를 새로운 onBlur prop을 사용해 input의 바깥을 클릭하면 키보드를 숨기고 언포커싱합니다.
+to do 텍스트부분을 터치하면 각 to do 속의 editing state를 true로 업데이트하고, editing이 true일 때만 TextInput을 표시합니다. input에 적힌 텍스트를 새로운 state에 저장하고, to do의 value로 다시 할당해줍니다. onBlur prop을 사용해 input의 바깥을 클릭하면 키보드를 숨기고 언포커싱합니다.
 
 
 <br><br><br>
