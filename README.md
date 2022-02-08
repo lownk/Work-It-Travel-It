@@ -1,5 +1,5 @@
-<br>
-# Work it Travel it
+
+# 💰Work it Travel it
 <br>
 
 ## 프로젝트 개요
@@ -29,14 +29,14 @@
 ---
 ## Work / Travel 탭
 - 탭을 분리해 두 가지 공간에 각각 할 일을 저장할 수 있습니다. <br>
-Work탭이 활성화 되어있는지의 여부를 boolean타입으로 working state에 저장해, 각각의 탭에서 onPress이벤트가 감지 될 경우 boolean타입에 따라 각각 다른 화면을 보여줍니다. <br>
+Work탭이 활성화 되어있는지의 여부를 boolean타입으로 working state에 저장합니다. 탭에서 onPress이벤트가 감지 될 경우 현재 working state와 각 to do의 working value가 일치할 때만 to do를 보여주게되므로, 탭마다 다른 to do를 보여줍니다. <br>
 
 - 앱을 재시작했을때 탭의 위치를 기억합니다.<br>
 탭을 터치할때마다 해당 탭의 working state를 AsyncStorage에 저장한 뒤, 앱이 재시작 될 때 해당 값을 불러와 현재의 working state로 할당합니다. 
 
 ## to do list
 - 할 일 저장<br>
-TextInput창에 텍스트를 입력한 후 키보드상의 완료 버튼을 누르면 onSubmitEditing prop에 의해 to do를 저장하는 함수가 호출됩니다. state로 만들어둔 빈 객체에 차곡차곡 do to들을 넣어줍니다. onChange로 받아진 텍스트를 text state에 저장합니다.  data.now()메소드의 결과 값을 각 to do의 고유 key값으로 사용했습니다. value에는 text, working, done, editing key들을 넣고 state로 활용합니다. 이렇게 to do의 정보를 담은 객체를 toDos state로 업데이트합니다.
+TextInput창에 텍스트를 입력한 후 키보드상의 완료 버튼을 누르면 onSubmitEditing prop에 의해 to do를 저장하는 함수가 호출됩니다. state로 만들어둔 빈 객체에 차곡차곡 do to들을 넣어줍니다. onChange로 받아진 텍스트를 text state에 저장합니다.  data.now()메소드의 결과 값을 각 to do의 고유 key값으로 사용했습니다. value에는 text, working, done, editing key들을 넣습니다. 이렇게 to do의 정보를 담은 객체를 toDos state로 업데이트합니다.
 
 - 할 일 완료 표시<br>
 done state를 만들어 boolean값을 할당하고, 각to do의 value에 넣습니다. done이 true일 때 해당 to do의 스타일에 접근해 아이콘을 변경하고 textDecoraition도 추가합니다.
