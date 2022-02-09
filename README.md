@@ -28,8 +28,7 @@
 ## 구현 사항
 ---
 
-<img src="https://user-images.githubusercontent.com/85019895/153166420-927d0cef-d263-450c-9738-c9704b5a44d8.png" width="500" height="500"/><img src="https://user-images.githubusercontent.com/85019895/153166441-124c693c-af28-4f4e-bc66-2d4adeb9afb2.png" width="500" height="500"/>
-<img src="https://user-images.githubusercontent.com/85019895/153166450-f62e873d-4d6e-461e-acc4-b1054fff6d4c.png" width="500" height="500"/><img src="https://user-images.githubusercontent.com/85019895/153166453-d65d1779-de3a-4140-be13-f72c2c235a7e.png" width="500" height="500"/>
+<img src="https://user-images.githubusercontent.com/85019895/153166420-927d0cef-d263-450c-9738-c9704b5a44d8.png" width="250" height="250"/><img src="https://user-images.githubusercontent.com/85019895/153166441-124c693c-af28-4f4e-bc66-2d4adeb9afb2.png" width="250" height="250"/><img src="https://user-images.githubusercontent.com/85019895/153166450-f62e873d-4d6e-461e-acc4-b1054fff6d4c.png" width="500" height="500"/><img src="https://user-images.githubusercontent.com/85019895/153166453-d65d1779-de3a-4140-be13-f72c2c235a7e.png" width="500" height="500"/>
 
 
 ## Work / Travel 탭
