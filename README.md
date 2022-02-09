@@ -1,5 +1,5 @@
 
-# Work it Travel it
+# 💰Work it Travel it
 <br>
 
 ## 프로젝트 개요
@@ -27,6 +27,13 @@
 
 ## 구현 사항
 ---
+
+![workittravelit-1](https://user-images.githubusercontent.com/85019895/153166420-927d0cef-d263-450c-9738-c9704b5a44d8.png)
+![workittravelit-2](https://user-images.githubusercontent.com/85019895/153166441-124c693c-af28-4f4e-bc66-2d4adeb9afb2.png)
+![workittravelit-3](https://user-images.githubusercontent.com/85019895/153166450-f62e873d-4d6e-461e-acc4-b1054fff6d4c.png)
+![workittravelit-4](https://user-images.githubusercontent.com/85019895/153166453-d65d1779-de3a-4140-be13-f72c2c235a7e.png)
+
+
 ## Work / Travel 탭
 - 탭을 분리해 두 가지 공간에 각각 할 일을 저장할 수 있습니다. <br>
 Work탭이 활성화 되어있는지의 여부를 boolean타입으로 working state에 저장합니다. 탭에서 onPress이벤트가 감지 될 경우 현재 working state와 각 to do의 working value가 일치할 때만 to do를 보여주게되므로, 탭마다 다른 to do를 보여줍니다. <br>
@@ -45,13 +52,8 @@ done state를 만들어 boolean값을 할당하고, 각to do의 value에 넣습�
 아이콘을 누르면 to do를 제거하는 함수가 호출됩니다. 자바스크립트 delete메소드로 key를 지칭해 해당 to do를 삭제합니다.
 
 - 할 일 수정<br>
-to do 텍스트부분을 터치하면 각 to do 속의 editing state를 true로 업데이트하고, editing이 true일 때만 TextInput을 표시합니다. input에 적힌 텍스트를 새로운 state에 저장하고, to do의 value로 다시 할당해줍니다. onBlur prop을 사용해 input의 바깥을 클릭하면 키보드를 숨기고 언포커싱합니다.
+to do 텍스트부분을 터치하면 각 to do 속의 editing state를 true로 업데이트하고, editing이 true일 때만 TextInput을 표시합니다. input에 적힌 텍스트를 새로운 state에 저장하고, to do의 text value로 다시 할당해줍니다. onBlur prop을 사용해 input의 바깥을 클릭하면 키보드를 숨기고 input을 언포커싱합니다.
 
 
-<br><br><br>
-
-## 기능별 시연 영상
----
-
-
+<br><br>
 
